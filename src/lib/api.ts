@@ -1,4 +1,3 @@
-#!/usr/bin/env ts-node
 import OpenAI from "openai";
 
 let openai: OpenAI | null = null;
