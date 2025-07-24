@@ -1,0 +1,54 @@
+{
+  "semesters": [
+    {
+      "id": 1,
+      "disciplinas": [
+        "Desenvolvimento FrontEnd",
+        "Desenvolvimento Dinâmico",
+        "UX",
+        "Lógica de Programação",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "id": 2,
+      "disciplinas": [
+        "Design de Software",
+        "Programação I",
+        "Estruturas de Dados",
+        "Banco de Dados",
+        "Prática Integradora"
+      ]
+    },
+    {
+      "id": 3,
+      "disciplinas": [
+        "Programação II",
+        "Arquitetura de Computadores",
+        "Desenvolvimento Mobile",
+        "Frameworks",
+        "Disruptive Tech"
+      ]
+    },
+    {
+      "id": 4,
+      "disciplinas": [
+        "DevOps I",
+        "DevOps II",
+        "Monitoramento",
+        "Computação em Nuvem",
+        "Extensão III"
+      ]
+    },
+    {
+      "id": 5,
+      "disciplinas": [
+        "Metodologia Ágil",
+        "Segurança",
+        "Compliance",
+        "Testes",
+        "Extensão IV"
+      ]
+    }
+  ]
+}

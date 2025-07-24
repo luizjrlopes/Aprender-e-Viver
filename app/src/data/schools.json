@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "id": "mod1",
+      "nomeEscola": "Escola Pedro Furtado",
+      "cidade": "Itamarati de Minas",
+      "turma": "9º ano",
+      "semestre": 1,
+      "disciplinasFaculdade": [
+        "Desenvolvimento FrontEnd",
+        "Desenvolvimento Dinâmico"
+      ],
+      "conteudoEscolar": [
+        "frações",
+        "cidadania"
+      ],
+      "nomeModulo": "Simulador de Frações",
+      "descricao": "Visualização de frações usando divisões de pizza",
+      "tecnologia": "HTML/CSS",
+      "linkApp": "https://example.com/mod1",
+      "imagens": []
+    },
+    {
+      "id": "mod2",
+      "nomeEscola": "Escola Santa Rita",
+      "cidade": "Astolfo Dutra",
+      "turma": "8º ano",
+      "semestre": 2,
+      "disciplinasFaculdade": [
+        "Design de Software",
+        "Programação I"
+      ],
+      "conteudoEscolar": [
+        "biomas",
+        "leitura de gráficos"
+      ],
+      "nomeModulo": "Quiz de Biomas",
+      "descricao": "Jogo de perguntas sobre biomas brasileiros",
+      "tecnologia": "React",
+      "linkApp": "https://example.com/mod2",
+      "imagens": []
+    }
+  ]
+}
