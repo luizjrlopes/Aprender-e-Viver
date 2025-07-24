@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import semestersData from '../data/semesters.json';
+import semestersData from '@data/semesters.json';
 
 interface Semester {
   id: number;
