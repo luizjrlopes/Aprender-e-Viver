@@ -3,7 +3,7 @@ import { useState } from "react";
 import ModuleCard from "@/components/ModuleCard";
 import { ModuloAppPEX } from "@/models/Module";
 
-import modulesData from "@/../data/schools.json";
+import modulesData from "@data/schools.json";
 import Button from "@/components/ui/Button";
 
 
