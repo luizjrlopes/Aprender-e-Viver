@@ -1,8 +1,8 @@
-'use client';
-import { useState } from 'react';
-import ModuleCard from '@/components/ModuleCard';
-import { ModuloAppPEX } from '@/models/Module';
-import modulesData from '../../data/schools.json';
+"use client";
+import { useState } from "react";
+import ModuleCard from "@/components/ModuleCard";
+import { ModuloAppPEX } from "@/models/Module";
+import modulesData from "@/../data/schools.json";
 
 interface Props {
   params: { id: string };
@@ -12,17 +12,17 @@ const allModules = (modulesData as { modules: ModuloAppPEX[] }).modules;
 
 export default function SemestrePage({ params }: Props) {
   const mods = allModules.filter((m) => m.semestre === Number(params.id));
-  const [ideas, setIdeas] = useState('');
-  const [disciplinas, setDisciplinas] = useState('');
-  const [conteudos, setConteudos] = useState('');
+  const [ideas, setIdeas] = useState("");
+  const [disciplinas, setDisciplinas] = useState("");
+  const [conteudos, setConteudos] = useState("");
 
   async function handleIdeas() {
-    const res = await fetch('/api/ideas', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const res = await fetch("/api/ideas", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        disciplinas: disciplinas.split(',').map((s) => s.trim()),
-        conteudos: conteudos.split(',').map((s) => s.trim()),
+        disciplinas: disciplinas.split(",").map((s) => s.trim()),
+        conteudos: conteudos.split(",").map((s) => s.trim()),
       }),
     });
     const data = await res.json();
@@ -67,7 +67,10 @@ export default function SemestrePage({ params }: Props) {
           value={conteudos}
           onChange={(e) => setConteudos(e.target.value)}
         />
-        <button className="px-2 py-1 bg-green-600 text-white" onClick={handleIdeas}>
+        <button
+          className="px-2 py-1 bg-green-600 text-white"
+          onClick={handleIdeas}
+        >
           Gerar
         </button>
         {ideas && <pre className="mt-4 whitespace-pre-wrap">{ideas}</pre>}
