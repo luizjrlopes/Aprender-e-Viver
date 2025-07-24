@@ -17,13 +17,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     // <— ESSENCIAL para o paths funcionar
-    "baseUrl": "app",
+    "baseUrl": ".",
     "paths": {
-      // agora @/ qualquer coisa vai buscar em app/src/
       "@/*": [
         "src/*"
       ],
-      // se quiser algo para assets públicos dentro de app/public
       "@public/*": [
         "public/*"
       ]
