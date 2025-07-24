@@ -15,6 +15,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@public/(.*)$': '<rootDir>/public/$1',
+    '^@data/(.*)$': '<rootDir>/data/$1',
     '^@/app/(.*)$': '<rootDir>/app/$1',
   },
 };
