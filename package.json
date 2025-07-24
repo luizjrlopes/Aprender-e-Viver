@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "generate-report": "ts-node scripts/generate-report.ts"
   },
   "dependencies": {
     "firebase-admin": "^13.4.0",
