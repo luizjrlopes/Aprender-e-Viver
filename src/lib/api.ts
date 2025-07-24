@@ -1,14 +1,19 @@
 #!/usr/bin/env ts-node
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+let openai: OpenAI | null = null;
 
 export async function generateIdeas(
   disciplinas: string[],
   conteudos: string[]
 ): Promise<string> {
+  if (!openai) {
+    const apiKey = process.env.OPENAI_API_KEY || (process.env.NODE_ENV === 'test' ? 'test' : '');
+    if (!apiKey) {
+      throw new Error('OpenAI API key not configured');
+    }
+    openai = new OpenAI({ apiKey });
+  }
   const system = `Você é um assistente que sugere ideias de apps educativos.`;
   const user = `Eu estudei: ${disciplinas.join(
     ", "

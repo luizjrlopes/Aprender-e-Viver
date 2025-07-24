@@ -3,7 +3,8 @@ import { db } from '@/lib/db';
 
 const collection = db.collection('modules');
 
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(_req: Request, context: any) {
+  const { params } = context as { params: { id: string } };
   const doc = await collection.doc(params.id).get();
   if (!doc.exists) {
     return NextResponse.json({ error: 'Não encontrado' }, { status: 404 });
@@ -11,7 +12,8 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
   return NextResponse.json({ id: doc.id, ...doc.data() });
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, context: any) {
+  const { params } = context as { params: { id: string } };
   try {
     const body = await req.json();
     await collection.doc(params.id).set(body, { merge: true });
@@ -22,7 +24,8 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
   }
 }
 
-export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(_req: Request, context: any) {
+  const { params } = context as { params: { id: string } };
   try {
     await collection.doc(params.id).delete();
     return NextResponse.json({ ok: true });

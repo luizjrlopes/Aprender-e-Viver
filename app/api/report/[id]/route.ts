@@ -9,8 +9,9 @@ import modulesData from "./../../../../data/schools.json";
 
 export async function GET(
   _req: Request,
-  { params }: { params: { id: string } }
+  context: any
 ) {
+  const { params } = context as { params: { id: string } };
   try {
     // 1. Buscar o módulo no JSON (pode trocar por Firestore quando migrar)
     const modules = (modulesData as { modules: any[] }).modules;
