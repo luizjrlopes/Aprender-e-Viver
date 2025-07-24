@@ -2,23 +2,32 @@
   "name": "aprender-e-viver",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev app",
-    "build": "next build app",
-    "start": "next start app",
-    "lint": "eslint ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "jest"
   },
   "dependencies": {
     "firebase-admin": "^13.4.0",
+    "handlebars": "^4.7.8",
     "next": "latest",
     "openai": "latest",
     "puppeteer": "^24.15.0",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swr": "^2.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.0.0",
     "@types/node": "24.1.0",
     "@types/react": "19.1.8",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^30.0.5",
+    "ts-jest": "^29.0.0"
   }
 }

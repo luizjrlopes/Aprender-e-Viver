@@ -1,7 +1,8 @@
 #!/usr/bin/env ts-node
-import puppeteer from "puppeteer";
-import { readFile } from "fs/promises";
-import { join } from "path";
+import puppeteer from 'puppeteer';
+import Handlebars from 'handlebars';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 interface ModuleData {
   nomeModulo: string;
@@ -21,30 +22,11 @@ async function loadModules(): Promise<ModuleData[]> {
 
 // Gera um PDF a partir dos dados de um módulo
 async function generateReport(module: ModuleData, outputFile: string) {
-  const html = `
-    <html>
-      <head>
-        <meta charset="utf-8"/>
-        <title>Relatório PEX</title>
-        <style>
-          body { font-family: sans-serif; margin: 2rem; }
-          h1 { color: #0070f3; }
-        </style>
-      </head>
-      <body>
-        <h1>Relatório PEX – ${module.nomeModulo}</h1>
-        <dl>
-          <dt>Escola</dt><dd>${module.nomeEscola} (Turma ${module.turma})</dd>
-          <dt>Semestre</dt><dd>${module.semestre}</dd>
-          <dt>Tema</dt><dd>${module.nomeModulo}</dd>
-        </dl>
-        <h2>Descrição</h2>
-        <p>${module.descricao}</p>
-      </body>
-    </html>
-  `;
+  const tplPath = join(__dirname, '../templates/report.html');
+  const tpl = await readFile(tplPath, 'utf-8');
+  const html = Handlebars.compile(tpl)(module);
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: "networkidle0" });
   await page.pdf({ path: outputFile, format: "A4", printBackground: true });

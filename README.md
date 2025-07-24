@@ -1,17 +1,30 @@
 # Aprender é Viver
 
-Este repositório contém o boilerplate do app "Aprender é Viver", um centralizador de Projetos de Extensão Universitária (PEX).
+Centralizador de Projetos de Extensão (PEX) usando Next.js 14 com App Router.
+
+## Setup
+
+1. Copie `.env.example` para `.env.local` e preencha as chaves.
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
 ## Scripts
 
-- `npm run dev` - inicia o servidor de desenvolvimento
-- `npm run build` - realiza o build da aplicação
-- `npm start` - inicia a aplicação em modo de produção
-- `npm run lint` - executa o ESLint
+- `npm run build` – gera o build de produção
+- `npm start` – executa o servidor em modo produção
+- `npm test` – executa os testes com Jest
 
-## Estrutura Inicial
+## Estrutura
 
-- package.json
-- .gitignore
-- README.md
-- next.config.js (configuração básica)
+- `app/` – rotas do Next.js App Router
+- `src/` – componentes e utilidades compartilhados
+- `data/` – arquivos JSON de exemplo
+- `templates/` – templates HTML para relatórios
+- `scripts/` – scripts utilitários
+

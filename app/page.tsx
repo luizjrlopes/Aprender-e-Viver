@@ -1,5 +1,5 @@
-import Link from "next/link";
-import semestersData from "@/data/semesters.json";
+import Link from 'next/link';
+import semestersData from '../data/semesters.json';
 
 interface Semester {
   id: number;
@@ -8,7 +8,7 @@ interface Semester {
 
 const { semesters } = semestersData as { semesters: Semester[] };
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <h1>Menu de Semestres</h1>
