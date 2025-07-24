@@ -7,13 +7,10 @@ import modulesData from "@data/schools.json";
 import Button from "@/components/ui/Button";
 
 
-interface Props {
-  params: { id: string };
-}
 
 const allModules = (modulesData as { modules: ModuloAppPEX[] }).modules;
 
-export default function SemestrePage({ params }: Props) {
+export default function SemestrePage({ params }: any) {
   const mods = allModules.filter((m) => m.semestre === Number(params.id));
   const [ideas, setIdeas] = useState("");
   const [disciplinas, setDisciplinas] = useState("");
