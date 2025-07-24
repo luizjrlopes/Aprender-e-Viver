@@ -2,7 +2,10 @@
 import { useState } from "react";
 import ModuleCard from "@/components/ModuleCard";
 import { ModuloAppPEX } from "@/models/Module";
-import modulesData from "@data/schools.json";
+
+import modulesData from "@/../data/schools.json";
+import Button from "@/components/ui/Button";
+
 
 interface Props {
   params: { id: string };
@@ -43,12 +46,9 @@ export default function SemestrePage({ params }: Props) {
         {mods.map((mod) => (
           <div key={mod.id} className="mb-4">
             <ModuleCard module={mod} />
-            <button
-              className="mt-2 px-2 py-1 bg-blue-500 text-white"
-              onClick={() => handleReport(mod.id)}
-            >
+            <Button className="mt-2" onClick={() => handleReport(mod.id)}>
               Gerar Relatório
-            </button>
+            </Button>
           </div>
         ))}
       </div>
@@ -67,12 +67,9 @@ export default function SemestrePage({ params }: Props) {
           value={conteudos}
           onChange={(e) => setConteudos(e.target.value)}
         />
-        <button
-          className="px-2 py-1 bg-green-600 text-white"
-          onClick={handleIdeas}
-        >
+        <Button onClick={handleIdeas} className="bg-green-600">
           Gerar
-        </button>
+        </Button>
         {ideas && <pre className="mt-4 whitespace-pre-wrap">{ideas}</pre>}
       </div>
     </div>
