@@ -24,6 +24,9 @@
       ],
       "@public/*": [
         "public/*"
+      ],
+      "@data/*": [
+        "data/*"
       ]
     },
     "incremental": true,

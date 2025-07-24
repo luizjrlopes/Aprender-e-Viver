@@ -3,7 +3,7 @@ import puppeteer from "puppeteer";
 import Handlebars from "handlebars";
 import { promises as fs } from "fs";
 import { join } from "path";
-import modulesData from "@/../data/schools.json";
+import modulesData from "@data/schools.json";
 
 export async function GET(
   _req: Request,
