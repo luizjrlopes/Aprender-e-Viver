@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ModuloAppPEX } from '@/models/Module';
+import Button from './ui/Button';
 
 interface Props {
   onSave: (mod: Partial<ModuloAppPEX>) => void;
@@ -16,7 +17,7 @@ export default function ModuleForm({ onSave }: Props) {
         onChange={e => setNomeModulo(e.target.value)}
         placeholder="Nome do módulo"
       />
-      <button type="submit" className="ml-2 px-4 py-2 bg-blue-500 text-white">Salvar</button>
+      <Button type="submit" className="ml-2">Salvar</Button>
     </form>
   );
 }
